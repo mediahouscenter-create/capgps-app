@@ -1,0 +1,67 @@
+{
+  "project_info": {
+    "project_number": "1036561143973",
+    "project_id": "gps-app-9",
+    "storage_bucket": "gps-app-9.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1036561143973:android:d155b644652b5e46f2d54c",
+        "android_client_info": {
+          "package_name": "com.trackcapgps.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBo5gar3Y0tIa5_aMCdRr4elGUOTRsebec"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1036561143973:android:ea61e04e1355f506f2d54c",
+        "android_client_info": {
+          "package_name": "com.eastwesttracking.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBo5gar3Y0tIa5_aMCdRr4elGUOTRsebec"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1036561143973:android:a626dd8dea0bf38ff2d54c",
+        "android_client_info": {
+          "package_name": "com.gpsprotector.gpsapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBo5gar3Y0tIa5_aMCdRr4elGUOTRsebec"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

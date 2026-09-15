@@ -1,0 +1,2 @@
+/Volumes/gennissi_gps/wox/Manager-app/vehi_track/android/app/.cxx/Debug/5kj3t245/x86_64/CMakeFiles/edit_cache.dir
+/Volumes/gennissi_gps/wox/Manager-app/vehi_track/android/app/.cxx/Debug/5kj3t245/x86_64/CMakeFiles/rebuild_cache.dir
