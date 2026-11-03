@@ -12,6 +12,9 @@ workflows:
       vars:
         BUNDLE_ID: "com.trackcapgps.app"
     scripts:
+      - name: Disable Swift Package Manager (Force CocoaPods)
+        script: |
+          flutter config --no-enable-swift-package-manager
       - name: Set up code signing settings on Xcode project
         script: |
           keychain initialize
