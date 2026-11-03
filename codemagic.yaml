@@ -3,17 +3,20 @@ workflows:
     name: iOS App Store Release (CAP GPS Traker)
     instance_type: mac_mini_m1
     max_build_duration: 60
+    integrations:
+      app_store_connect: codemagic_api_key   # 👈 Mettez le "Key name" choisi à l'étape 1
     environment:
       flutter: stable
       xcode: latest
       cocoapods: default
-      groups:
-        - app_store_credentials # Environment variables set in Codemagic web dashboard
       vars:
         BUNDLE_ID: "com.trackcapgps.app"
     scripts:
       - name: Set up code signing settings on Xcode project
         script: |
+          keychain initialize
+          app-store-connect fetch-signing-files $(BUNDLE_ID) --type IOS_APP_STORE --create
+          keychain add-certificates
           xcode-project use-profiles
       - name: Get Flutter packages
         script: |
@@ -25,7 +28,7 @@ workflows:
         script: |
           flutter build ipa --release \
             --build-name=1.0.0 \
-            --build-number=$(($BUILD_NUMBER + 3)) \
+            --build-number=$(($BUILD_NUMBER + 4)) \
             --export-options-plist=/Users/builder/export_options.plist
     artifacts:
       - build/ios/ipa/*.ipa
@@ -35,21 +38,3 @@ workflows:
         auth: integration
         submit_to_testflight: true
         submit_to_app_store: false
-
-  android-release:
-    name: Android Release App Bundle
-    instance_type: mac_mini_m1
-    max_build_duration: 30
-    environment:
-      flutter: stable
-    scripts:
-      - name: Get Flutter packages
-        script: |
-          flutter pub get
-      - name: Build Release App Bundle
-        script: |
-          flutter build appbundle --release \
-            --build-name=1.0.0 \
-            --build-number=$(($BUILD_NUMBER + 3))
-    artifacts:
-      - build/app/outputs/bundle/release/*.aab
