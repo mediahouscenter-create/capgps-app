@@ -14,6 +14,7 @@ workflows:
       cocoapods: default
       vars:
         BUNDLE_ID: "com.trackcapgps.app"
+        APP_STORE_APPLE_ID: 6831236708
     scripts:
       - name: Disable Swift Package Manager (Force CocoaPods)
         script: |
@@ -29,9 +30,16 @@ workflows:
           find . -name "Podfile" -execdir pod install \;
       - name: Build iOS IPA Package
         script: |
+          LATEST_BUILD_NUMBER=$(app-store-connect get-latest-testflight-build-number "$APP_STORE_APPLE_ID" 2>/dev/null || echo "")
+          if [ -z "$LATEST_BUILD_NUMBER" ] || [ "$LATEST_BUILD_NUMBER" -le 4 ] 2>/dev/null; then
+            NEW_BUILD_NUMBER=5
+          else
+            NEW_BUILD_NUMBER=$(($LATEST_BUILD_NUMBER + 1))
+          fi
+          echo "Building iOS package with build number: $NEW_BUILD_NUMBER"
           flutter build ipa --release \
             --build-name=1.0.0 \
-            --build-number=$(($BUILD_NUMBER + 4)) \
+            --build-number=$NEW_BUILD_NUMBER \
             --export-options-plist=/Users/builder/export_options.plist
     artifacts:
       - build/ios/ipa/*.ipa
