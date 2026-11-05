@@ -1,7 +1,7 @@
 workflows:
   ios-app-store:
     name: iOS App Store Release (CAP GPS Traker)
-    instance_type: mac_mini_m1
+    instance_type: mac_mini_m2
     max_build_duration: 60
     integrations:
       app_store_connect: codemagic_api_key # Name of the API key set in Codemagic Team Settings -> Integrations
