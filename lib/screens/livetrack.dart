@@ -6,7 +6,6 @@ import 'package:alxgration_speedometer/speedometer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:fluttertoast/fluttertoast.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:latlong2/latlong.dart' as latlng;
 
@@ -381,7 +380,7 @@ class _livetrack extends State<livetrack> {
                 // color: Colors.white,
                 //color: Color(0x99FFFFFF),
                 child: Icon(
-                  FontAwesomeIcons.locationArrow,
+                  Icons.near_me,
                   color: Colors.grey[700],
                   size: 20,
                 ),
@@ -436,7 +435,7 @@ class _livetrack extends State<livetrack> {
                 // color: Colors.white,
                 //color: Color(0x99FFFFFF),
                 child: Icon(
-                  FontAwesomeIcons.streetView,
+                  Icons.streetview,
                   color: Colors.grey[700],
                   size: 20,
                 ),

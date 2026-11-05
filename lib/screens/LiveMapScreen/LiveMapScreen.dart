@@ -8,7 +8,6 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/services.dart';
 import 'package:fluttertoast/fluttertoast.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:maktrogps/data/datasources.dart';
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
@@ -796,7 +795,7 @@ class _LiveMapScreenState extends State<LiveMapScreen>
                   // color: Colors.white,
                   //color: Color(0x99FFFFFF),
                   child: const Icon(
-                    FontAwesomeIcons.streetView,
+                    Icons.streetview,
                     color: Color(0xff0D3D65),
                     size: 20,
                   ),
@@ -1901,7 +1900,7 @@ class _LiveMapScreenState extends State<LiveMapScreen>
               height: 16)
               : model.type.toString().toLowerCase() == 'battery'
               ? const Icon(
-            FontAwesomeIcons.batteryFull,
+            Icons.battery_full,
             size: 16,
             color: themeDark,
           )
@@ -1950,8 +1949,7 @@ class _LiveMapScreenState extends State<LiveMapScreen>
               .toLowerCase() ==
               'temp'
               ? const Icon(
-            FontAwesomeIcons
-                .temperatureLow,
+            Icons.thermostat,
             size: 16,
             color: themeDark,
           )
